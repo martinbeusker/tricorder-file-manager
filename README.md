@@ -13,41 +13,25 @@
   <img src="https://img.shields.io/badge/project-non--commercial%20fan%20homage-A390C9" alt="Non-commercial fan homage">
 </p>
 
-Tricorder is a native macOS file manager that dresses the real filesystem in the
-look and rhythm of an LCARS panel — the elbows, end-caps, colour-coded tags, and
-terminal readouts of a 24th-century starship console. Every panel reflects **real
-files**: the storage meter shows your actual disk, the clock is the real clock, and
-the FILE RECORD panel previews whatever you select.
+As a kid I was intrugued by the LCARS computer interface on Star Trek: TNG. We had
+MS DOS!, so the LCARS panels on the show looked like magic to me.
+This is an homage to the Star Trek: TNG computer. Tricorder, a native macOS
+file manager in the styje of an LCARS panel.
 
 Built in **Swift + SwiftUI** (native AppKit under the hood), so it's a genuine
 double-clickable `.app` — no Electron, no browser.
 
-> **Why I built it:** I love the LCARS design language and wanted to actually *use* it
-> every day — so I wired it to my real files instead of fictional starship data.
-
 ## What it does
 
-- **Browse the real filesystem** starting from your home folder.
+- **Browse the macOS filesystem** starting from your home folder.
 - **Nav rail** — quick jumps to Home, Desktop, Documents, Downloads, Pictures, Applications.
 - **Breadcrumbs** (`MAIN / …`) — click any segment to jump up the tree.
-- **Recursive search** — searches the current folder **and every subfolder** by name
-  (⌘F to focus). The walk runs in the background and **streams results as they're found**
-  (status bar shows `SCANNING… N FOUND`), so the UI never blocks; each hit shows its path
-  relative to where you're searching. It's debounced, cancellable (a new keystroke or
-  navigating away cancels it) and capped at 500 results / a bounded node count for safety.
-  Press **Enter** to open the top hit, **Esc** to clear and hand focus back to the list.
-- **Sortable columns** — NAME / TYPE / SIZE / MODIFIED (click a header to sort, click
-  again to reverse; folders always first).
+- **Recursive search** — searches the current folder **and every subfolder**.
+- **Sortable columns** — NAME / TYPE / SIZE / MODIFIED
 - **Colour-coded type tags** — DIR / DOC / IMG / VID / AUD / DATA / CODE / DB / ARCV / APP.
 - **FILE RECORD panel** — a live **preview feed** (LCARS-terminal text readout for text
-  files, a thumbnail for images, animated stripes for binaries), plus type, real size,
-  modified date, path and a name checksum, with live actions:
-  - **OPEN / VIEW** — descend into a folder, or open a file in its default app.
-  - **COPY** — copies the file reference to the clipboard (paste it in Finder).
-  - **MOVE** — pick a destination folder and relocate the item.
-  - **PURGE** — moves the item to the Trash (with confirmation).
-- **Live chrome** — real clock, real volume usage in the STORAGE meter and footer,
-  live object counts.
+  files, a thumbnail for images, plus type, real size,
+  modified date, path and a name checksum
 - **Behaviour toggles** (menu **Systems**): Motion (animations), Red Alert, Compact density.
 
 ## Keyboard & menus
@@ -64,10 +48,8 @@ double-clickable `.app` — no Electron, no browser.
 
 ## Build
 
-Targets macOS 14+ on Apple Silicon. The project builds **without Xcode or a full SPM
-setup** — just the Command Line Tools (`swiftc`) plus a hand-assembled bundle (SPM's
-`PackageDescription` fails to link under CLT-only installs, so a direct compile is used
-instead):
+Targets macOS 14+ on Apple Silicon. The project builds without Xcode so a direct
+compile instead:
 
 ```sh
 git clone https://github.com/martinbeusker/tricorder-file-manager.git
@@ -76,8 +58,7 @@ cd tricorder-file-manager
 open "build/LCARS Ops.app"
 ```
 
-To install it, drag `build/LCARS Ops.app` into `/Applications`. (The build target is
-named `LCARS Ops.app` — the on-disk product name; the repository is `tricorder-file-manager`.)
+To install it, drag `build/LCARS Ops.app` into `/Applications`.
 
 ## Layout
 
@@ -106,15 +87,7 @@ Resources/
 
 The LCARS lettering is set in **[Antonio](https://fonts.google.com/specimen/Antonio)**,
 a free, open condensed sans by Vernon Adams, distributed by Google Fonts under the
-**SIL Open Font License 1.1**. It is bundled as static weights (Regular / Medium /
-SemiBold / Bold) instanced from the variable font and registered at launch.
-
-Antonio is used deliberately as a **clean, openly-licensed stand-in** for the proprietary
-condensed faces associated with the original on-screen graphics (e.g. Swiss 911 Ultra
-Compressed and the various "Okuda"-style display fonts). None of those proprietary or
-fan-scene fonts are included in this repository — only Antonio, whose full licence ships
-in [`Resources/Fonts/OFL.txt`](Resources/Fonts/OFL.txt).
-
+**SIL Open Font License 1.1**. It is bundled as static weights.
 ## License
 
 The **source code** of this project is released under the **MIT License** © 2026
