@@ -1,14 +1,16 @@
 # Tricorder
 
+<p align="center">
+  <img src="docs/header.png" alt="Tricorder — an LCARS-inspired macOS file manager: breadcrumbs, a sortable file list, and the FILE RECORD preview panel" width="100%">
+</p>
+
 **An LCARS-inspired file manager for macOS — a homage to the *Star Trek: The Next Generation* computer interface.**
 
-![Platform](https://img.shields.io/badge/platform-macOS%2014%2B-black)
-![Swift](https://img.shields.io/badge/Swift-SwiftUI-orange)
-![License](https://img.shields.io/badge/license-MIT-blue)
-![Status](https://img.shields.io/badge/project-non--commercial%20fan%20homage-A390C9)
-
 <p align="center">
-  <img src="Resources/AppIcon.png" alt="App icon: an abstract LCARS elbow" width="140">
+  <img src="https://img.shields.io/badge/platform-macOS%2014%2B-black" alt="Platform: macOS 14+">
+  <img src="https://img.shields.io/badge/Swift-SwiftUI-orange" alt="Swift / SwiftUI">
+  <img src="https://img.shields.io/badge/license-MIT-blue" alt="License: MIT">
+  <img src="https://img.shields.io/badge/project-non--commercial%20fan%20homage-A390C9" alt="Non-commercial fan homage">
 </p>
 
 Tricorder is a native macOS file manager that dresses the real filesystem in the
